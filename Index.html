@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday Jyothi! ✨</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@400;700;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+body{min-height:100vh;background:#0a0018;overflow-x:hidden;font-family:'Nunito',sans-serif;color:white;}
+.bg-layer{position:fixed;inset:0;z-index:0;background:linear-gradient(245deg,#0a0018,#1a003a,#00093a,#1a003a,#0a0018);background-size:400% 400%;animation:bgShift 8s ease infinite;}
+@keyframes bgShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.aurora{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden;}
+.aurora-band{position:absolute;width:200%;left:-50%;height:180px;border-radius:50%;filter:blur(40px);animation:auroraFloat var(--ad) ease-in-out infinite alternate;opacity:0.22;}
+.aurora-band:nth-child(1){top:10%;background:linear-gradient(90deg,#ff69b4,#b44aff,#00d4ff);--ad:7s;}
+.aurora-band:nth-child(2){top:35%;background:linear-gradient(90deg,#b44aff,#ff69b4,#ffd700);--ad:10s;animation-delay:-3s;}
+.aurora-band:nth-child(3){top:65%;background:linear-gradient(90deg,#00d4ff,#b44aff,#ff69b4);--ad:8s;animation-delay:-5s;}
+@keyframes auroraFloat{from{transform:translateX(-10%) scaleY(1);}to{transform:translateX(10%) scaleY(1.3);}}
+.stars{position:fixed;inset:0;z-index:2;pointer-events:none;}
+.star{position:absolute;background:white;border-radius:50%;animation:starBlink var(--sd) ease-in-out infinite;opacity:0;}
+@keyframes starBlink{0%,100%{opacity:0;transform:scale(0.4);}50%{opacity:1;transform:scale(1.3);}}
+.shoot{position:fixed;height:2px;width:120px;z-index:3;pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,0),white);border-radius:999px;animation:shoot var(--shd) linear infinite;opacity:0;}
+@keyframes shoot{0%{opacity:0;transform:translate(0,0) rotate(-35deg);}5%{opacity:1;}30%{opacity:0;transform:translate(400px,200px) rotate(-35deg);}100%{opacity:0;transform:translate(400px,200px) rotate(-35deg);}}
+.orb{position:fixed;border-radius:50%;filter:blur(60px);z-index:2;pointer-events:none;animation:orbDrift var(--od) ease-in-out infinite alternate;opacity:0.18;}
+.orb1{width:300px;height:300px;background:#ff69b4;top:10%;left:-5%;--od:9s;}
+.orb2{width:250px;height:250px;background:#b44aff;top:50%;right:-5%;--od:11s;animation-delay:-4s;}
+.orb3{width:200px;height:200px;background:#ffd700;bottom:5%;left:30%;--od:7s;animation-delay:-2s;}
+@keyframes orbDrift{from{transform:translate(0,0) scale(1);}to{transform:translate(40px,-40px) scale(1.15);}}
+.petal{position:fixed;z-index:4;pointer-events:none;border-radius:50% 0 50% 0;animation:petalFall var(--pd) linear infinite;}
+@keyframes petalFall{0%{transform:translateY(-20px) translateX(0) rotate(0deg);opacity:1;}100%{transform:translateY(105vh) translateX(var(--px)) rotate(600deg);opacity:0;}}
+.sparkle-float{position:fixed;z-index:5;pointer-events:none;animation:sparkleDrift var(--sfd) ease-in-out infinite;opacity:0;}
+@keyframes sparkleDrift{0%{opacity:0;transform:translateY(0) scale(0.5) rotate(0deg);}20%{opacity:1;}80%{opacity:1;}100%{opacity:0;transform:translateY(-120px) scale(1.2) rotate(180deg);}}
+.container{position:relative;z-index:10;max-width:680px;margin:0 auto;padding:50px 20px 80px;text-align:center;}
+.crown{font-size:60px;display:inline-block;animation:crownBounce 1.2s ease-in-out infinite;filter:drop-shadow(0 0 16px #ffd700);}
+@keyframes crownBounce{0%,100%{transform:translateY(0) rotate(-5deg);}50%{transform:translateY(-18px) rotate(5deg);}}
+.ring-wrap{position:relative;width:240px;height:240px;margin:16px auto 32px;}
+.ring{position:absolute;inset:0;border-radius:50%;border:2px solid transparent;}
+.ring1{border-color:rgba(255,105,180,0.6) transparent rgba(255,105,180,0.6) transparent;animation:spinRing 3s linear infinite;}
+.ring2{inset:12px;border-color:transparent rgba(180,74,255,0.6) transparent rgba(180,74,255,0.6);animation:spinRing 2s linear infinite reverse;}
+.ring3{inset:24px;border-color:rgba(255,215,0,0.5) transparent rgba(255,215,0,0.5) transparent;animation:spinRing 4s linear infinite;}
+@keyframes spinRing{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+.pulse-ring{position:absolute;inset:-20px;border-radius:50%;border:2px solid rgba(255,105,180,0.4);animation:pulseRing 2s ease-out infinite;pointer-events:none;}
+.pulse-ring:nth-child(2){animation-delay:0.7s;}.pulse-ring:nth-child(3){animation-delay:1.4s;}
+@keyframes pulseRing{0%{transform:scale(0.8);opacity:0.8;}100%{transform:scale(1.4);opacity:0;}}
+.center-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:90px;line-height:1;animation:iconPop 2.5s ease-in-out infinite;filter:drop-shadow(0 0 24px rgba(255,150,220,0.9));}
+@keyframes iconPop{0%,100%{transform:translate(-50%,-50%) scale(1) rotate(-3deg);}50%{transform:translate(-50%,-60%) scale(1.12) rotate(3deg);}}
+.name{font-family:'Dancing Script',cursive;font-size:clamp(3rem,10vw,5rem);display:inline-block;background:linear-gradient(90deg,#ff69b4,#ffd700,#b44aff,#00d4ff,#ff69b4);background-size:300% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:nameShimmer 2.5s linear infinite;}
+@keyframes nameShimmer{from{background-position:0% center;}to{background-position:300% center;}}
+.aka{display:inline-block;font-size:0.85rem;letter-spacing:4px;text-transform:uppercase;color:#ffb3d9;background:rgba(255,105,180,0.12);border:1px solid rgba(255,105,180,0.4);border-radius:999px;padding:5px 22px;margin-bottom:28px;}
+.glitch{font-family:'Dancing Script',cursive;font-size:clamp(1rem,3vw,1.35rem);color:#e0b4ff;position:relative;display:inline-block;}
+.glitch::before,.glitch::after{content:attr(data-text);position:absolute;top:0;left:0;width:100%;}
+.glitch::before{color:#ff69b4;clip:rect(0,900px,0,0);animation:glitch1 3s infinite linear;}
+.glitch::after{color:#00d4ff;clip:rect(0,900px,0,0);animation:glitch2 3s infinite linear;}
+@keyframes glitch1{0%,90%,100%{clip:rect(0,0,0,0);transform:none;}92%{clip:rect(10px,900px,20px,0);transform:translate(-4px,0);}94%{clip:rect(30px,900px,50px,0);transform:translate(4px,0);}96%{clip:rect(5px,900px,15px,0);transform:translate(-2px,0);}}
+@keyframes glitch2{0%,90%,100%{clip:rect(0,0,0,0);transform:none;}93%{clip:rect(25px,900px,40px,0);transform:translate(3px,0);}95%{clip:rect(2px,900px,12px,0);transform:translate(-3px,0);}97%{clip:rect(40px,900px,55px,0);transform:translate(2px,0);}}
+.traits{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:40px;}
+.trait{background:rgba(255,255,255,0.05);border:1px solid rgba(255,150,220,0.25);border-radius:18px;padding:14px 18px;cursor:pointer;animation:traitBounceIn 0.6s cubic-bezier(.34,1.56,.64,1) both;transition:transform 0.25s,background 0.25s,border-color 0.25s,box-shadow 0.25s;backdrop-filter:blur(10px);}
+.trait:hover{transform:translateY(-10px) scale(1.08) rotate(-2deg);background:rgba(255,105,180,0.2);border-color:rgba(255,105,180,0.7);box-shadow:0 10px 40px rgba(255,105,180,0.4);}
+.trait-icon{font-size:30px;display:block;animation:traitIconWiggle 3s ease-in-out infinite;}
+.trait:nth-child(2) .trait-icon{animation-delay:0.3s;}.trait:nth-child(3) .trait-icon{animation-delay:0.6s;}.trait:nth-child(4) .trait-icon{animation-delay:0.9s;}.trait:nth-child(5) .trait-icon{animation-delay:1.2s;}
+@keyframes traitIconWiggle{0%,100%{transform:rotate(0deg) scale(1);}25%{transform:rotate(-8deg) scale(1.1);}75%{transform:rotate(8deg) scale(1.1);}}
+@keyframes traitBounceIn{from{opacity:0;transform:scale(0.3) translateY(30px);}to{opacity:1;transform:scale(1) translateY(0);}}
+.trait-label{font-size:0.72rem;color:#ffb3d9;letter-spacing:1px;font-weight:700;text-transform:uppercase;margin-top:5px;}
+.wish-box{position:relative;overflow:hidden;border-radius:28px;padding:36px 30px;margin-bottom:40px;background:rgba(255,255,255,0.04);border:1px solid rgba(180,74,255,0.35);}
+.wish-box::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,105,180,0.07),rgba(180,74,255,0.07),rgba(0,212,255,0.05));animation:bgShift 6s ease infinite;background-size:300% 300%;pointer-events:none;}
+.wish-box::after{content:'';position:absolute;inset:-1px;border-radius:28px;background:linear-gradient(90deg,#ff69b4,#b44aff,#00d4ff,#ffd700,#ff69b4);background-size:400% 100%;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:destination-out;mask-composite:exclude;padding:1px;animation:borderRun 3s linear infinite;pointer-events:none;}
+@keyframes borderRun{from{background-position:0% center;}to{background-position:400% center;}}
+.wish-text{position:relative;z-index:1;font-size:clamp(0.95rem,2.4vw,1.1rem);color:#f0d4ff;line-height:1.95;}
+.wish-text strong{color:#ffb3d9;font-weight:900;}
+.hbd{font-family:'Dancing Script',cursive;font-size:clamp(2.8rem,11vw,5.5rem);background:linear-gradient(135deg,#ff69b4,#ffd700,#b44aff,#ff69b4);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:bgShift 3s ease infinite;margin-bottom:10px;display:block;}
+.btn{display:inline-block;font-family:'Nunito',sans-serif;font-weight:900;font-size:1rem;color:white;letter-spacing:1px;padding:15px 40px;border-radius:999px;border:none;cursor:pointer;background:linear-gradient(135deg,#ff69b4,#b44aff,#ff69b4);background-size:200% 100%;animation:btnPulse 2s ease-in-out infinite;transition:transform 0.2s;box-shadow:0 0 30px rgba(255,105,180,0.5),0 0 60px rgba(180,74,255,0.3);position:relative;overflow:hidden;}
+.btn::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.25),transparent);transform:translateX(-100%);animation:btnShine 2.5s ease-in-out infinite;}
+@keyframes btnShine{0%,100%{transform:translateX(-100%);}50%{transform:translateX(100%);}}
+@keyframes btnPulse{0%,100%{background-position:0% center;}50%{background-position:100% center;}}
+.btn:hover{transform:scale(1.08) translateY(-3px);}
+.cf{position:fixed;border-radius:2px;pointer-events:none;z-index:999;animation:cfFall var(--cfd) ease-in forwards;}
+@keyframes cfFall{0%{opacity:1;transform:translateY(0) rotate(0deg) translateX(0);}100%{opacity:0;transform:translateY(100vh) rotate(720deg) translateX(var(--cfx));}}
+.bottom-stars{margin-top:28px;display:flex;justify-content:center;gap:10px;}
+.bs{font-size:22px;animation:bsAnim 1.5s ease-in-out infinite;display:inline-block;}
+.bs:nth-child(1){animation-delay:0s;}.bs:nth-child(2){animation-delay:0.2s;}.bs:nth-child(3){animation-delay:0.4s;}.bs:nth-child(4){animation-delay:0.6s;}.bs:nth-child(5){animation-delay:0.8s;}.bs:nth-child(6){animation-delay:1.0s;}.bs:nth-child(7){animation-delay:1.2s;}
+@keyframes bsAnim{0%,100%{transform:scale(0.7) translateY(0);opacity:0.5;}50%{transform:scale(1.3) translateY(-8px);opacity:1;}}
+</style>
+</head>
+<body>
+<div class="bg-layer"></div>
+<div class="aurora"><div class="aurora-band"></div><div class="aurora-band"></div><div class="aurora-band"></div></div>
+<div class="stars" id="stars"></div>
+<div id="shoots"></div>
+<div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+<div id="petals"></div>
+<div id="sparkles-float"></div>
+
+<div class="container">
+  <div class="crown">👑</div>
+  <div class="ring-wrap">
+    <div class="pulse-ring"></div><div class="pulse-ring"></div><div class="pulse-ring"></div>
+    <div class="ring ring1"></div><div class="ring ring2"></div><div class="ring ring3"></div>
+    <div class="center-icon">🧚‍♀️</div>
+  </div>
+  <div><span class="name">Jyothi ✨</span></div>
+  <div style="margin-bottom:28px;"><span class="aka">aka Dootha 🌸</span></div>
+  <div style="margin-bottom:36px;"><span class="glitch" data-text="Cool · Aesthetic · Traditional · Iconic">Cool · Aesthetic · Traditional · Iconic</span></div>
+  <div class="traits">
+    <div class="trait" style="animation-delay:0.1s"><span class="trait-icon">💅</span><span class="trait-label">Aesthetic</span></div>
+    <div class="trait" style="animation-delay:0.2s"><span class="trait-icon">🔥</span><span class="trait-label">Cool AF</span></div>
+    <div class="trait" style="animation-delay:0.3s"><span class="trait-icon">👑</span><span class="trait-label">Queen</span></div>
+    <div class="trait" style="animation-delay:0.4s"><span class="trait-icon">🌸</span><span class="trait-label">Trendy</span></div>
+    <div class="trait" style="animation-delay:0.5s"><span class="trait-icon">✨</span><span class="trait-label">Magical</span></div>
+  </div>
+  <div class="wish-box">
+    <p class="wish-text">
+      Hey <strong>Dootha</strong>! 🎀<br><br>
+      On your special day, just wanna say — you are literally the <strong>coolest</strong> person I know.
+      The way you carry yourself — so <strong>aesthetic</strong>, so <strong>trendy</strong>, so uniquely <em>you</em> — it's honestly iconic. 🌙<br><br>
+      You slay every vibe, every look, every moment. The world just hits different when you're in it.
+      May this year bring you all the magic, joy, and endless glow-ups you deserve. ✨<br><br>
+      <strong>Love you forever, sissy! 💖</strong>
+    </p>
+  </div>
+  <span class="hbd">Happy Birthday! 🎂</span><br>
+  <button class="btn" onclick="boom()">✨ Explode the Magic! ✨</button>
+  <div class="bottom-stars">
+    <span class="bs">🌟</span><span class="bs">💖</span><span class="bs">🌸</span><span class="bs">✨</span>
+    <span class="bs">🦋</span><span class="bs">💫</span><span class="bs">🌟</span>
+  </div>
+</div>
+
+<script>
+const starsEl=document.getElementById('stars');
+for(let i=0;i<150;i++){
+  const s=document.createElement('div');s.className='star';
+  const sz=Math.random()*3+0.8;
+  s.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;--sd:${Math.random()*3+1}s;animation-delay:${Math.random()*5}s;`;
+  starsEl.appendChild(s);
+}
+const shootsEl=document.getElementById('shoots');
+for(let i=0;i<6;i++){
+  const s=document.createElement('div');s.className='shoot';
+  s.style.cssText=`top:${Math.random()*40}%;left:${Math.random()*60}%;--shd:${Math.random()*5+4}s;animation-delay:${Math.random()*10}s;`;
+  shootsEl.appendChild(s);
+}
+const petalsEl=document.getElementById('petals');
+const pColors=['#ffb3d9','#ff69b4','#ffcce5','#e891c0','#ffd6ee','#c084fc'];
+for(let i=0;i<30;i++){
+  const p=document.createElement('div');p.className='petal';
+  const sz=Math.random()*10+6;
+  p.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:-20px;background:${pColors[Math.floor(Math.random()*pColors.length)]};--pd:${Math.random()*7+5}s;--px:${(Math.random()-0.5)*200}px;animation-delay:${Math.random()*10}s;border-radius:${Math.random()>.5?'50% 0 50% 0':'0 50% 0 50%'};`;
+  petalsEl.appendChild(p);
+}
+const spEl=document.getElementById('sparkles-float');
+const spEmojis=['✨','💫','⭐','🌟','💖','🌸'];
+for(let i=0;i<18;i++){
+  const s=document.createElement('div');s.className='sparkle-float';
+  s.textContent=spEmojis[Math.floor(Math.random()*spEmojis.length)];
+  s.style.cssText=`left:${Math.random()*100}%;top:${20+Math.random()*70}%;--sfd:${Math.random()*4+3}s;animation-delay:${Math.random()*8}s;font-size:${Math.random()*12+12}px;`;
+  spEl.appendChild(s);
+}
+const cfColors=['#ff69b4','#ffd700','#b44aff','#00d4ff','#ff4757','#2ed573','#ffb3d9','#fff'];
+function boom(){
+  for(let i=0;i<120;i++){
+    setTimeout(()=>{
+      const c=document.createElement('div');c.className='cf';
+      const sz=Math.random()*12+5;
+      c.style.cssText=`left:${Math.random()*100}%;top:-10px;width:${sz}px;height:${Math.random()>.5?sz:sz*0.4}px;background:${cfColors[Math.floor(Math.random()*cfColors.length)]};border-radius:${Math.random()>.4?'50%':'2px'};--cfd:${Math.random()*2.5+1.2}s;--cfx:${(Math.random()-0.5)*300}px;`;
+      document.body.appendChild(c);
+      setTimeout(()=>c.remove(),4000);
+    },i*15);
+  }
+}
+setTimeout(boom,800);
+</script>
+</body>
+</html>
